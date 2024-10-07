@@ -15,13 +15,19 @@ docker compose up --build
 
 ```console
 # Upload a file
-curl -X POST http://localhost:8001/api/v1/embedings/file -H "Content-Type: multipart/form-data" -F "file=@./backend/tests/data/test.pdf"
+curl -X POST http://localhost:8001/api/v1/embedings/file \
+  -H "Content-Type: multipart/form-data" \
+  -F "file=@./backend/tests/data/test.pdf"
 
 # Submit URL
-curl -X POST http://localhost:8001/api/v1/embedings/url -H "Content-Type: application/json" -d '{"url": "https://services.google.com/fh/files/misc/ai_adoption_framework_whitepaper.pdf"}'
+curl -X POST http://localhost:8001/api/v1/embedings/url \
+  -H "Content-Type: application/json" \
+  -d '{"url": "https://services.google.com/fh/files/misc/ai_adoption_framework_whitepaper.pdf"}'
 
 # Search
-curl -X POST http://localhost:8001/api/v1/embedings/search -H "Content-Type: application/json" -d '{"query": "How to secure my documents?"}'
+curl -X POST http://localhost:8001/api/v1/embedings/search \
+  -H "Content-Type: application/json" \
+  -d '{"query": "How to secure my documents?"}'
 ```
 
 ## Improvements
