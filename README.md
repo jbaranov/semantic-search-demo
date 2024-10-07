@@ -19,16 +19,17 @@ curl -X POST http://localhost:8001/api/v1/embedings/file -H "Content-Type: multi
 
 # Submit URL
 curl -X POST http://localhost:8001/api/v1/embedings/url -H "Content-Type: application/json" -d '{"url": "https://services.google.com/fh/files/misc/ai_adoption_framework_whitepaper.pdf"}'
+
 # Search
-curl http://localhost:8001/api/v1/embedings/search -H "Content-Type: application/json" -d '{"query": "How to secure my documents?"}'
+curl -X POST http://localhost:8001/api/v1/embedings/search -H "Content-Type: application/json" -d '{"query": "How to secure my documents?"}'
 ```
 
 ## Improvements
 
-* Use OCR for text extraction from PDFs. Text extracted from digital documents is not always reliable. Also, there is always posibility to encounter scanned documents.
-* Use reqursive sentence splitting using the same embedding model.
+* Use OCR for text extraction from PDFs. Text extracted from digital documents is not always reliable, and scanned documents can always be encountered.
+* Use recursive sentence splitting using the same embedding model.
 * Add bad text filtering (e.g. empty pages, empty lines, very short lines, etc.). Some of those could cause false positives.
-* Play with different embedding models and chunking strategies to achive better results based on product requirements.
+* Play with different embedding models and chunking strategies to achieve better results based on product requirements.
 * Write unit tests 🥲
 
 ## General Workflow (for development)
