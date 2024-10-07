@@ -27,7 +27,7 @@ curl -X POST http://localhost:8001/api/v1/embedings/url \
 # Search
 curl -X POST http://localhost:8001/api/v1/embedings/search \
   -H "Content-Type: application/json" \
-  -d '{"query": "How to secure my documents?"}'
+  -d '{"query": "How to secure my data?"}'
 ```
 
 ## Improvements
